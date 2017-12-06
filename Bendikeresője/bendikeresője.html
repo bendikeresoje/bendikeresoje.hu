@@ -1,0 +1,115 @@
+<html>
+	<head>
+		<title>Bendi keresője</title>
+		<meta charset="utf-8">
+		
+	
+	</head>
+	
+	<body >
+		
+		
+		<p id="demo"></p>
+		<br>
+		<p id="Bendi">Bendi keresője</p>
+		<center><input  type="text" id="userInput"></input></center>
+		<br>
+		<center><button class="button" onclick="kereses()" id="kereses"><span>Keresés</span></button></center>
+		
+		<style>
+			#Bendi {
+				font-size: 70pt;
+				text-align: center;
+				color: E05900;
+				font-weight: bold;
+				alt: sakt;
+			
+			
+			}
+			#userInput {
+			
+				height: 30pt;
+				width: 600pt;
+				font-size: 20pt;
+			}
+		
+			
+			.button {
+			  border-radius: 4px;
+			  background-color: #f4511e;
+			  border: none;
+			  color: #FFFFFF;
+			  text-align: center;
+			  font-size: 28px;
+			  padding: 20px;
+			  width: 200px;
+			  transition: all 0.5s;
+			  cursor: pointer;
+			  margin: 5px;
+			}
+
+			.button span {
+			  cursor: pointer;
+			  display: inline-block;
+			  position: relative;
+			  transition: 0.5s;
+			}
+
+			.button span:after {
+			  content: '\00bb';
+			  position: absolute;
+			  opacity: 0;
+			  top: 0;
+			  right: -20px;
+			  transition: 0.5s;
+			}
+
+			.button:hover span {
+			  padding-right: 25px;
+			}
+
+			.button:hover span:after {
+			  opacity: 1;
+			  right: 0;
+			}
+
+		</style>
+		 
+
+		<script>
+		
+		function kereses(){
+		
+		var userInput = document.getElementById("userInput").value;
+			var kiegeszito = "http://www.google.com/search?q="
+			
+				document.getElementById("demo").innerHTML = kiegeszito + userInput;
+			var link = document.getElementById("demo").value;
+		
+				location.replace('http://www.google.com/search?q=' + userInput);
+			
+			}
+			window.addEventListener("keydown", checkKeyPress, false);
+
+				function checkKeyPress(key) {
+				 if (key.keyCode == "13") {
+							var userInput = document.getElementById("userInput").value;
+			var kiegeszito = "http://www.google.com/search?q="
+			
+				document.getElementById("demo").innerHTML = kiegeszito + userInput;
+			var link = document.getElementById("demo").value;
+		
+				location.replace('http://www.google.com/search?q=' + userInput);
+				 
+				}
+			}
+
+			
+				
+				
+			
+	
+		</script>
+	</body>
+
+</html>
